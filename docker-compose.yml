@@ -1,0 +1,15 @@
+version: '3.6'
+
+volumes:
+  data:
+
+services:
+  pad:
+    build: ./
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - data:/etherpad/
+      - ./dirty.db:/etherpad/dirty.db
+      - ./settings.json:/etherpad/settings.json
